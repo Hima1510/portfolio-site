@@ -20,6 +20,13 @@ RUN printf '{"version":"%s","git_sha":"%s","built_at":"%s"}\n' \
 
 # --- Stage 3: runtime image (nginx as non-root, listens on 8080) ---
 FROM nginxinc/nginx-unprivileged:1.27-alpine
+# The deployment platform runs pytest against the final image. Keep the same
+# suite available there so its test step doesn't get skipped.
+USER root
+RUN apk add --no-cache python3 py3-pytest
+WORKDIR /opt/portfolio
+COPY tests /opt/portfolio/tests
+USER 101
 # Copying this marker makes the test stage a dependency of the final image,
 # so tests always run, even with BuildKit.
 COPY --from=test /tests.passed /tmp/.tests-passed
