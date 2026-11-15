@@ -1,0 +1,36 @@
+# Applied by the platform into the repository's own namespace, e.g.
+#   kubectl apply -n <repo-namespace> -f k8s/
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portfolio-site
+  labels:
+    app: portfolio-site
+spec:
+  replicas: 1
+  revisionHistoryLimit: 5   # keeps previous versions available for rollback
+  selector:
+    matchLabels:
+      app: portfolio-site
+  template:
+    metadata:
+      labels:
+        app: portfolio-site
+    spec:
+      containers:
+        - name: web
+          image: portfolio-site:latest   # replaced by the platform with the built image
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet: { path: /healthz, port: 8080 }
+            initialDelaySeconds: 1
+            periodSeconds: 3
+          livenessProbe:
+            httpGet: { path: /healthz, port: 8080 }
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          resources:
+            requests: { cpu: 20m, memory: 16Mi }
+            limits: { cpu: 200m, memory: 64Mi }

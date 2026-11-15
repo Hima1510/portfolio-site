@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jordan Ellis – Software engineer, developer tools</title>
+  <meta name="description" content="Portfolio of Jordan Ellis, a software engineer who builds developer tools, CI/CD pipelines and machine-learning services.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js"></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="#top">Jordan Ellis</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">Dark mode</button>
+  </header>
+
+  <main id="main">
+    <section id="top" class="hero" aria-labelledby="hero-name">
+      <h1 id="hero-name" class="hero-name"><span>Jordan</span> <span>Ellis</span></h1>
+      <p class="hero-statement">I build developer tools: the pipelines, services and dashboards that let teams ship without fear.</p>
+      <dl class="hero-facts">
+        <div><dt>Right now</dt><dd>Building a rollout tool that scores the risk of every deploy before it goes live.</dd></div>
+        <div><dt>Open to</dt><dd>Platform and tooling roles, plus short freelance reviews of CI/CD setups.</dd></div>
+        <div><dt>Writing</dt><dd>Notes on boring, reliable infrastructure.</dd></div>
+      </dl>
+      <p class="hero-actions">
+        <a class="button" href="#work">See my work</a>
+        <a class="button button-quiet" href="#contact">Get in touch</a>
+      </p>
+    </section>
+
+    <section id="work" class="section" aria-labelledby="work-title">
+      <h2 id="work-title" class="section-title">Selected work</h2>
+      <div class="section-body">
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="chip" data-filter="devops" aria-pressed="false">DevOps</button>
+          <button type="button" class="chip" data-filter="ml" aria-pressed="false">Machine learning</button>
+          <button type="button" class="chip" data-filter="web" aria-pressed="false">Web</button>
+        </div>
+        <ul class="projects">
+          <li class="project" data-tags="devops ml">
+            <span class="project-year">2026</span>
+            <div class="project-main">
+              <h3><a class="link" href="https://example.com/projects/rollout-risk" rel="noopener">Rollout Risk</a></h3>
+              <p>Predicts the chance a deployment fails from commit and build data, then rolls back automatically when live metrics turn unhealthy.</p>
+              <p class="project-stack">Python, scikit-learn, Kubernetes, Prometheus</p>
+            </div>
+          </li>
+          <li class="project" data-tags="devops">
+            <span class="project-year">2025</span>
+            <div class="project-main">
+              <h3><a class="link" href="https://example.com/projects/pipeline-pilot" rel="noopener">Pipeline Pilot</a></h3>
+              <p>Connects a GitHub repository, registers webhooks and runs build, test and deploy on every push with no manual steps.</p>
+              <p class="project-stack">Go, Docker, GitHub Actions</p>
+            </div>
+          </li>
+          <li class="project" data-tags="ml">
+            <span class="project-year">2025</span>
+            <div class="project-main">
+              <h3><a class="link" href="https://example.com/projects/metric-watch" rel="noopener">Metric Watch</a></h3>
+              <p>Flags unusual CPU, memory and latency patterns with an Isolation Forest, and explains which signal moved first.</p>
+              <p class="project-stack">Python, Isolation Forest, Grafana</p>
+            </div>
+          </li>
+          <li class="project" data-tags="web">
+            <span class="project-year">2024</span>
+            <div class="project-main">
+              <h3><a class="link" href="https://example.com/projects/release-board" rel="noopener">Release Board</a></h3>
+              <p>A dashboard that shows every pipeline run, its risk score and its rollback history in one place.</p>
+              <p class="project-stack">TypeScript, React, PostgreSQL</p>
+            </div>
+          </li>
+          <li class="project" data-tags="web devops">
+            <span class="project-year">2023</span>
+            <div class="project-main">
+              <h3><a class="link" href="https://example.com/projects/static-ship" rel="noopener">Static Ship</a></h3>
+              <p>A tiny nginx-based template that ships a static site in a container, with health checks and release tracking built in.</p>
+              <p class="project-stack">nginx, Docker, Kubernetes</p>
+            </div>
+          </li>
+        </ul>
+        <p id="no-projects" class="empty" hidden>No projects match this filter. Choose All to see every project.</p>
+      </div>
+    </section>
+
+    <section id="about" class="section" aria-labelledby="about-title">
+      <h2 id="about-title" class="section-title">About</h2>
+      <div class="section-body prose">
+        <p>I'm a software engineer who likes the part of the job that happens after the code is written: building, testing, releasing and watching it run. I care about pipelines that tell you the truth and rollbacks that happen before anyone files a ticket.</p>
+        <p>I work across Python and Go services, container platforms and a little machine learning where it earns its place. I write tests first when the problem is unclear and last when it is obvious.</p>
+        <dl class="skills">
+          <div><dt>Languages</dt><dd>Python, Go, TypeScript, SQL</dd></div>
+          <div><dt>Infrastructure</dt><dd>Docker, Kubernetes, GitHub Actions, Terraform</dd></div>
+          <div><dt>Data and ML</dt><dd>scikit-learn, pandas, Prometheus, Grafana</dd></div>
+          <div><dt>Practices</dt><dd>Testing, code review, incident write-ups</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="experience" class="section" aria-labelledby="experience-title">
+      <h2 id="experience-title" class="section-title">Experience</h2>
+      <div class="section-body">
+        <ol class="timeline">
+          <li>
+            <p class="timeline-when">2024 to now</p>
+            <h3>Platform engineer, Northwind Systems</h3>
+            <p>Own the CI/CD platform used by 40 services. Cut median deploy time from 18 minutes to 6 and introduced automatic rollback on error-rate spikes.</p>
+          </li>
+          <li>
+            <p class="timeline-when">2022 to 2024</p>
+            <h3>Backend developer, Lumen Labs</h3>
+            <p>Built the REST APIs and background workers behind a logistics product, and moved the team from hand-run scripts to containerised releases.</p>
+          </li>
+          <li>
+            <p class="timeline-when">2018 to 2022</p>
+            <h3>B.Tech in Computer Science, Riverbend Institute of Technology</h3>
+            <p>Focus on distributed systems and machine learning. Final-year project on predicting build failures from repository history.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="section-title">Contact</h2>
+      <div class="section-body">
+        <p class="lead">Have a project, a question or a pipeline that needs a second pair of eyes? Write a few lines and your email app will open with the message ready to send.</p>
+        <form class="contact-form" action="mailto:hello@example.com" method="get" enctype="text/plain">
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" required placeholder="A short summary">
+          <label for="body">Message</label>
+          <textarea id="body" name="body" rows="5" required placeholder="What would you like to talk about?"></textarea>
+          <button class="button" type="submit">Open in email app</button>
+        </form>
+        <ul class="elsewhere">
+          <li><a class="link" href="https://example.com/jordan-ellis/github" rel="noopener">GitHub</a></li>
+          <li><a class="link" href="https://example.com/jordan-ellis/linkedin" rel="noopener">LinkedIn</a></li>
+          <li><a class="link" href="mailto:hello@example.com">hello@example.com</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year">2026</span> Jordan Ellis. Sample content for deployment testing.</p>
+    <p class="release"><span class="dot" aria-hidden="true"></span>Release <span id="release">dev</span></p>
+  </footer>
+</body>
+</html>
